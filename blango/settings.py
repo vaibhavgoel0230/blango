@@ -48,6 +48,7 @@ class Dev(Configuration):
         'django.contrib.messages',
         'django.contrib.staticfiles',
         'blog',
+        "blango_auth",
         "crispy_forms",
         "crispy_bootstrap5",
         "debug_toolbar",
@@ -65,6 +66,7 @@ class Dev(Configuration):
     ]
 
     ROOT_URLCONF = 'blango.urls'
+    AUTH_USER_MODEL = "blango_auth.User"
 
     TEMPLATES = [
         {
