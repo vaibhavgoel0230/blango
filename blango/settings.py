@@ -53,6 +53,7 @@ class Dev(Configuration):
         "crispy_bootstrap5",
         "debug_toolbar",
         "rest_framework",
+        "rest_framework.authtoken",
     ]
 
     MIDDLEWARE = [
@@ -188,6 +189,14 @@ class Dev(Configuration):
             "handlers": ["console"],
             "level": "DEBUG",
         },
+    }
+
+    REST_FRAMEWORK = {
+        "DEFAULT_AUTHENTICATION_CLASSES": [
+            "rest_framework.authentication.BasicAuthentication",
+            "rest_framework.authentication.SessionAuthentication",
+            "rest_framework.authentication.TokenAuthentication",
+        ]
     }
 
 class Prod(Dev):
