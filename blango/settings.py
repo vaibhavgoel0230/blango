@@ -202,6 +202,13 @@ class Dev(Configuration):
         ],
     }
 
+    SWAGGER_SETTINGS = {
+        "SECURITY_DEFINITIONS": {
+            "Token": {"type": "apiKey", "name": "Authorization", "in": "header"},
+            "Basic": {"type": "basic"},
+        }
+    }
+
 class Prod(Dev):
     DEBUG = False
     SECRET_KEY = values.SecretValue()
